@@ -1,19 +1,21 @@
 {
   "name": "sns-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepare" : "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nazmul11265/SocialLogin.git"
   },
-  "keywords": ["getName"],
+  "keywords": [
+    "getName"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -23,5 +25,7 @@
   "devDependencies": {
     "typescript": "^4.6.4"
   },
-  "files": ["/lib/**/*"]
+  "files": [
+    "/lib/**/*"
+  ]
 }
