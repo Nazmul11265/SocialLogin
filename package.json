@@ -29,6 +29,7 @@
     "/lib/**/*"
   ],
   "dependencies": {
+    "axios": "^0.27.2",
     "query-string": "^7.1.1"
   }
 }
