@@ -29,7 +29,7 @@
     "/lib/**/*"
   ],
   "dependencies": {
-    "axios": "^0.27.2",
+    "node-fetch": "^3.2.4",
     "query-string": "^7.1.1"
   }
 }

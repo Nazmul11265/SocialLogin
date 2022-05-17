@@ -1,6 +1,6 @@
 import * as queryString from "query-string";
 import { GoogleLoginCredential } from "./credentials";
-import axios from "axios";
+import fetch from 'node-fetch';
 
 class GoogleAuth {
   credentials: GoogleLoginCredential = {
@@ -35,18 +35,18 @@ class GoogleAuth {
     return `https://accounts.google.com/o/oauth2/v2/auth?${googleParams}`
   }
   async getAccessTokenFromCode(code: string) {
-    const { data } = await axios({
-      url: `https://oauth2.googleapis.com/token`,
-      method: 'post',
-      data: {
+    const response = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      body: JSON.stringify({
         client_id: this.credentials.client_id,
         client_secret: this.credentials.client_secret,
         redirect_uri: this.credentials.redirect_uri,
-        grant_type: this.credentials.grant_type,
-        code,
-      },
-    });
-    return data.access_token;
+        grant_type: 'authorization_code',
+        code: code
+      })
+    })
+    const token = await response.json();
+    return token;
   }
 }
 
